@@ -1,29 +1,6 @@
-# website
-
-## Project setup
+### WHAT TO INSTALL
 ```
-npm install
+LEAFLET JS ( MAP )
+BOOTSTRAPVUE
+Animation On Slide
 ```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
