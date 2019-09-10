@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import jQuery from 'jquery';
+import Vuex from 'vuex';
 
 window.$ = window.jQuery = jQuery;
 
@@ -27,7 +28,7 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.component('l-map', Vue2Leaflet.LMap)
 Vue.component('l-tile-layer', Vue2Leaflet.LTileLayer)
-
+Vue.use(Vuex)
 
 // SMOOTH SCROLL
 $(document).ready(function(){
@@ -57,7 +58,7 @@ $(document).ready(function(){
 
       var hash = this.hash;
       $('html, body').animate({
-        scrollTop: $(hash).offset().top
+        scrollTop: $(hash).offset()
       }, 1000, function(){
         window.location.hash = hash;
       });
