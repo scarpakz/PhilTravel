@@ -22,8 +22,6 @@ import * as Vue2Leaflet from 'vue2-leaflet'
 import { Icon }  from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
-
-
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.component('l-map', Vue2Leaflet.LMap)
@@ -75,11 +73,7 @@ Icon.Default.mergeOptions({
   shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+
 
 new Vue({
   created () {
@@ -95,6 +89,7 @@ let markerinfo = {
 
 new Vue({
   el: '.app',
+  store,
   data: { 
     map: null,
     tileLayer: null,
@@ -122,3 +117,10 @@ new Vue({
   },
 })
 
+// VUEX
+const app = new Vue({
+  el: "#app",
+  store,
+  router,
+  render: h => h(App)
+});

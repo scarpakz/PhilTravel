@@ -4,15 +4,15 @@
             <h1 class="contact-title">Contact Us</h1>
             <b-row>
                 <b-col>
-                    {{ count }}
                     <h2>NEWSLETTER</h2>
+                    {{ state }}
                     <p><i>Subscribe to get the latest updates</i></p>
                     <b-form-input v-model="email" placeholder="Email Address" required></b-form-input>
                     <b-form-input v-model="text" placeholder="First name" required></b-form-input>
                     <b-form-input v-model="text" placeholder="Last name" required></b-form-input>
                     <b-form-input v-model="text" placeholder="Contact Number ( Optional )"></b-form-input>
                     <b-button variant="info" v-on:click="increment">SUBSCRIBE</b-button>
-                    <b-button variant="danger" v-on:click="reset">RESET</b-button>
+                    <b-button variant="danger" v-on:click="decrement">RESET</b-button>
                 </b-col>
                 <b-col><div id="map"></div></b-col>
             </b-row>
@@ -20,27 +20,27 @@
     </div>
 </template>
 <script>
-import Vue from 'vue';
-import Vuex from 'vuex';
-Vue.use(Vuex)
+import store from '../store';
 
-// TESTING PURPOSE
-export default {
+export default{
     data(){
-        return{
-            count: 0
+        return {
+            state: store.state.count
         }
     },
-    methods: {
+    methods:{
         increment(){
-            this.count++;
+            console.log("testing")
+            this.state = store.state.count
         },
-        reset(){
-            this.count=0;
+        decrement(){
+            this.value--
         }
     }
 }
+
 </script>
+
 <style scoped>
 #map{
     height: 500px;
